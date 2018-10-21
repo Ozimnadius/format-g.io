@@ -1,0 +1,39 @@
+//variables
+//fonts
+$font: 'Montserrat', Arial, sans-serif;
+
+//colors
+$text: #444444;
+$bg: #ffffff;
+
+//another
+$font-size: 14px;
+
+//layout
+/*-----------------SECTION-MIXINS--------------------*/
+@import "layout/_mixins";
+/*------------------------SECTION-FONTS----------------*/
+@import "layout/_fonts";
+/*------------------------SECTION-SMART-GRID----------------*/
+@import "layout/_smart-grid";
+/*------------------------SECTION-ADJUSTMENT----------------*/
+@import "layout/_adjustment";
+/*-----------------SECTION-HOVER-ANIM--------------------*/
+@import "layout/_hover-anim";
+/*-----------------SECTION-SPRITE--------------------*/
+@import "layout/_sprite";
+/*------------------------SECTION-COMMON----------------*/
+@import "layout/_common";
+
+//sections
+/*------------------------SECTION-HEADER----------------*/
+@import "sections/_header";
+/*------------------------SECTION-FOOTER---------------------*/
+@import "sections/_footer";
+
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}
