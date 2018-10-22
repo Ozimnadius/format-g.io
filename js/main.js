@@ -1,20 +1,12 @@
-window.onload = function () {
+$(function () {
+    const body = $('body');
 
-    const body = document.querySelector('body');
-    const nav2 = document.querySelectorAll('.nav-2');
+   $('.nav-1__item').on('mouseover', function (e) {
+       let item = $(this),
+           parent = item.closest('.nav-1'),
+           items = parent.find('.nav-1__item');
 
-    body.addEventListener('mouseover', function (e) {
-        if (e.target.classList.contains('nav-1__item-link')) {
-            let item = e.target.parentElement,
-            sub = item.querySelector('.nav-2');
-
-            for (let i=0; i < nav2.length; i++) {
-                nav2[i].classList.remove('active');
-            }
-            sub.classList.add('active');
-
-        }
-
-    });
-
-};
+       items.removeClass('active');
+       item.addClass('active');
+   });
+});

@@ -78,6 +78,30 @@
 .control {
   margin-right: 13px;
   transition: .3s;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid $bg;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_whatsapp {
+    border: none;
+    padding: 0;
+  }
+
+
+  &__svg {
+    max-width: 100%;
+    max-height: 100%;
+    fill: $bg;
+
+    &_whatsapp {
+
+    }
+  }
 
   &:last-child {
     margin-right: 0;
@@ -99,7 +123,10 @@
       opacity: .7;
     }
 
-    &-icon {
+    &-svg {
+      width: 20px;
+      height: 20px;
+      fill: $bg;
       margin-right: 13px;
     }
     &-text {
@@ -175,7 +202,9 @@
     position: relative;
 
     &:hover {
-
+      .nav__drop {
+        top: 100%;
+      }
     }
 
     &-link {
@@ -196,7 +225,7 @@
   &__drop {
     position: absolute;
     z-index: 10;
-    top: 100%;
+    top: -999px;
     padding: 28px 40px;
 
     width: 485px;
@@ -217,12 +246,16 @@
       margin-bottom: 0;
     }
 
-    //&:hover {
-    //  .nav-2 {
-    //    display: block;
-    //  }
-    //
-    //}
+    &.active {
+      .nav-1__item-link {
+        color: #222222;
+      }
+
+      .nav-2 {
+        display: block;
+      }
+    }
+
 
     &-link {
       display: block;
@@ -233,9 +266,6 @@
       padding-right: 10px;
       transition: .3s;
 
-      &:hover {
-        color: #222222;
-      }
     }
   }
 }
@@ -249,10 +279,6 @@
   bottom: 0;
   right: 0;
   padding: 28px 40px;
-
-  &.active {
-    display: block;
-  }
 
   &__item {
     display: block;

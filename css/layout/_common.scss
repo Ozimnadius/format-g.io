@@ -1,3 +1,13 @@
 .button {
 
 }
+
+.proportion {
+  width: 100%;
+  &_566x560 {
+    padding-top: calc( (560/566)*100% );
+  }
+  &_566x276 {
+    padding-top: calc( (276/566)*100% );
+  }
+}

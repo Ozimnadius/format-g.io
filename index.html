@@ -46,7 +46,9 @@
 
                     <div class="header__callorder">
                         <a href="#" class="callorder__button">
-                            <div class="callorder__button-icon icon-tel"></div>
+                            <svg class="callorder__button-svg">
+                                <use xlink:href="images/icons/sprite.svg#tel"></use>
+                            </svg>
                             <div class="callorder__button-text">
                                 Заказать обратный звонок
                             </div>
@@ -55,20 +57,30 @@
 
                     <div class="header__controls-list">
                         <div class="controls">
-                            <a href="#" class="control">
-                                <div class="icon-whatsapp"></div>
+                            <a href="#" class="control control_whatsapp">
+                                <svg class="control__svg control__svg">
+                                    <use xlink:href="images/icons/sprite.svg#whatsapp-logo"></use>
+                                </svg>
                             </a>
                             <a href="#" class="control">
-                                <div class="icon-vk"></div>
+                                <svg class="control__svg">
+                                    <use xlink:href="images/icons/sprite.svg#vk"></use>
+                                </svg>
                             </a>
                             <a href="#" class="control">
-                                <div class="icon-fb"></div>
+                                <svg class="control__svg">
+                                    <use xlink:href="images/icons/sprite.svg#facebook-logo"></use>
+                                </svg>
                             </a>
                             <a href="#" class="control">
-                                <div class="icon-inst"></div>
+                                <svg class="control__svg">
+                                    <use xlink:href="images/icons/sprite.svg#instagram-social-network-logo-of-photo-camera"></use>
+                                </svg>
                             </a>
                             <a href="#" class="control">
-                                <div class="icon-tw"></div>
+                                <svg class="control__svg">
+                                    <use xlink:href="images/icons/sprite.svg#twitter-logo-silhouette"></use>
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -151,11 +163,11 @@
                         </a>
                         <div class="nav__drop">
                             <div class="nav-1">
-                                <div class="nav-1__item">
+                                <div class="nav-1__item active">
                                     <a href="#" class="nav-1__item-link">
                                         Бюстгалтеры
                                     </a>
-                                    <div class="nav-2 active">
+                                    <div class="nav-2">
                                         <a href="#" class="nav-2__item">Push-up чашка</a>
                                         <a href="#" class="nav-2__item">Плотная чашка</a>
                                         <a href="#" class="nav-2__item">Мягкая чашка</a>
@@ -180,7 +192,39 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nav__item"><a href="#" class="nav__item-link">Нижнее белье</a></div>
+                    <div class="nav__item">
+                        <a href="#" class="nav__item-link">Нижнее белье</a>
+                        <div class="nav__drop">
+                            <div class="nav-1">
+                                <div class="nav-1__item active">
+                                    <a href="#" class="nav-1__item-link">
+                                        Бюстгалтеры
+                                    </a>
+                                    <div class="nav-2">
+                                        <a href="#" class="nav-2__item">Push-up чашка</a>
+                                        <a href="#" class="nav-2__item">Плотная чашка</a>
+                                        <a href="#" class="nav-2__item">Мягкая чашка</a>
+                                    </div>
+                                </div>
+                                <div class="nav-1__item">
+                                    <a href="#" class="nav-1__item-link">Боди</a>
+                                    <div class="nav-2">
+                                        <a href="#" class="nav-2__item">Lorem ipsum1</a>
+                                        <a href="#" class="nav-2__item">Lorem ipsum2</a>
+                                        <a href="#" class="nav-2__item">Мягкая чашка2</a>
+                                    </div>
+                                </div>
+                                <div class="nav-1__item">
+                                    <a href="#" class="nav-1__item-link">Трусы</a>
+                                    <div class="nav-2">
+                                        <a href="#" class="nav-2__item">Push-up 3</a>
+                                        <a href="#" class="nav-2__item">Плотная 3</a>
+                                        <a href="#" class="nav-2__item">Мягкая ч3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="nav__item"><a href="#" class="nav__item-link">Одежда для дома</a></div>
                     <div class="nav__item"><a href="#" class="nav__item-link">аксессуары</a></div>
                     <div class="nav__item"><a href="#" class="nav__item-link">Акции</a></div>
@@ -195,7 +239,76 @@
 
     <!-- page -->
     <div class="page">
+        <main class="main">
 
+            <!-- categories -->
+            <section class="main-cats">
+                <div class="container">
+                    <div class="row">
+                        <div class="main-cats__col">
+                            <div class="main-cat">
+
+                                <div class="proportion proportion_566x560"></div>
+
+                                <div class="main-cat__img">
+                                    <img src="images/content/category/cat1.jpg" alt="Свитшоты" class="main-cat__pic">
+                                </div>
+
+                                <div class="main-cat__content">
+                                    <div class="main-cat__title">
+                                        Свитшоты
+                                    </div>
+                                    <a href="#" class="main-cat__link">
+                                        Перейти в категорию
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="main-cats__col">
+                            <div class="main-cat main-cat_small">
+
+                                <div class="proportion proportion_566x276"></div>
+
+                                <div class="main-cat__img">
+                                    <img src="images/content/category/cat2.jpg" alt="Топы" class="main-cat__pic">
+                                </div>
+
+                                <div class="main-cat__content main-cat__content_br">
+                                    <div class="main-cat__title">
+                                        Топы
+                                    </div>
+                                    <a href="#" class="main-cat__link">
+                                        Перейти в категорию
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="main-cat main-cat_small">
+
+                                <div class="proportion proportion_566x276"></div>
+
+                                <div class="main-cat__img">
+                                    <img src="images/content/category/cat3.jpg" alt="Легинсы" class="main-cat__pic">
+                                </div>
+
+                                <div class="main-cat__content main-cat__content_bl">
+                                    <div class="main-cat__title">
+                                        Легинсы
+                                    </div>
+                                    <a href="#" class="main-cat__link">
+                                        Перейти в категорию
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END categories -->
+
+        </main>
     </div>
     <!-- END page -->
 
