@@ -1,6 +1,9 @@
 .footer {
   background-color: #222222;
   padding: 40px 0 60px 0;
+  @include sm-block {
+    padding: 50px 0;
+  };
 
   &__top {
     padding-bottom: 60px;
@@ -11,6 +14,9 @@
       padding-bottom: 0;
       border-bottom: none;
     };
+    @include sm-block {
+      margin-bottom: 60px;
+    };
   }
 
   &__left {
@@ -18,12 +24,24 @@
     @include size(8);
     @include size-lg(7);
     @include size-md(8);
+    @include sm-block {
+      display: none;
+    };
   }
 
   &__logo {
     margin-bottom: 20px;
     margin-left: -15px;
     margin-top: -15px;
+
+    &_sm {
+      display: none;
+      @include sm-block {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 15px;
+      };
+    }
   }
 
   &__text {
@@ -55,6 +73,9 @@
       display: none;
       @include md-block {
         display: block;
+      };
+      @include sm-block {
+
       };
     }
 
@@ -92,9 +113,19 @@
       flex-direction: row;
       justify-content: space-between;
     };
+    @include size-sm(24);
+    @include sm-block {
+      flex-direction: column;
+      align-items: center;
+    };
 
     &-top {
       margin-bottom: 30px;
+      @include sm-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      };
     }
   }
 
@@ -105,6 +136,10 @@
     text-transform: uppercase;
     margin-bottom: 20px;
     display: block;
+    @include sm-block {
+      font-size: 20px;
+      margin-bottom: 35px;
+    };
 
     &:hover {
       text-decoration: underline;
@@ -126,6 +161,11 @@
     justify-content: center;
     margin-right: 18px;
     transition: .3s;
+    @include sm-block {
+      width: 36px;
+      height: 36px;
+      padding: 7px;
+    };
 
     &:last-child{
       margin-right: 0;
@@ -147,6 +187,12 @@
     }
   }
 
+  &__cards {
+    &-img {
+      width: 291px;
+    }
+  }
+
   &__bottom {
 
     .row {
@@ -158,12 +204,25 @@
     &-left{
       @include col;
       @include size(12);
+      @include size-sm(24);
+      @include sm-block {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      };
     }
     &-right {
       @include col;
       @include size(12);
       display: flex;
       justify-content: flex-end;
+      @include size-sm(24);
+      @include sm-block {
+        justify-content: center;
+        margin-bottom: 40px;
+      };
     }
 
   }
@@ -171,6 +230,9 @@
   &__copy {
     color: #999999;
     font-weight: 600;
+    @include sm-block {
+      display: none;
+    };
   }
 
   &__vendor{

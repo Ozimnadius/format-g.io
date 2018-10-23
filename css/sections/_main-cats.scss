@@ -1,9 +1,17 @@
 .main-cats {
   margin-bottom: 100px;
 
+  .container {
+    padding: 0;
+  }
+
   .row {
     margin-right: -4px;
     margin-left: -4px;
+    @include sm-block {
+      margin-right: -15px;
+      margin-left: -15px;
+    };
   }
 
   &__col {
@@ -12,12 +20,32 @@
     width: calc(50% - 8px);
     margin-left: 4px;
     margin-right: 4px;
+    @include xs-block {
+      @include col;
+      @include size-xs(24);
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  ;
   }
 
 }
 
 .main-cat {
   position: relative;
+  @include xs-block {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .proportion {
+      padding-top: calc( (235/356)*100% );
+    }
+  };
 
   &_small {
     margin-bottom: 8px;
@@ -37,18 +65,43 @@
     overflow: hidden;
   }
 
+  &__pic {
+    width: 100%;
+  }
+
   &__content {
     position: absolute;
     z-index: 20;
     top: 45px;
     right: 40px;
-    background-color: rgba(#013243,.6);
-    padding: 15px 25px 20px 25px;
+    background-color: rgba(#013243, .6);
+
+
+    width: 265px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
     @include md-block {
       top: initial;
       bottom: 30px;
       right: 10px;
-    };
+      width: 200px;
+      height: 100px;
+    }
+
+    @include xs-block {
+      bottom: 20px;
+      right: 15px;
+
+      width: 225px;
+      height: 100px;
+
+    }
+
 
     &_br {
       top: initial;
@@ -57,6 +110,9 @@
       @include md-block {
         bottom: 30px;
         right: 15px;
+      }
+      @include xs-block {
+        bottom: 20px;
       };
     }
 
@@ -69,7 +125,13 @@
       @include md-block {
         bottom: 30px;
         left: 78px;
-      };
+      }
+      @include xs-block {
+        bottom: 20px;
+        left: initial;
+        right: 15px;
+      }
+
     }
   }
 
@@ -80,13 +142,21 @@
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba($bg,.2);
+    border-bottom: 1px solid rgba($bg, .2);
     margin-bottom: 10px;
+    @include sm-block {
+      font-size: 18px;
+    }
+  ;
   }
 
   &__link {
     color: $bg;
     transition: .3s;
+    @include sm-block {
+      font-size: 12px;
+    }
+  ;
 
     &:hover {
       text-decoration: underline;
@@ -108,7 +178,8 @@
     @include md-block {
       font-size: 24px;
       margin-bottom: 30px;
-    };
+    }
+  ;
 
     &:before, &:after {
       content: '';
@@ -124,10 +195,12 @@
     }
   }
 }
+
 .new-product {
   @include col;
   @include size(6);
   @include size-md(12);
+  @include size-xs(24);
 
   display: flex;
   justify-content: center;

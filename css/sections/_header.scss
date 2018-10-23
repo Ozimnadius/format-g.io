@@ -1,4 +1,7 @@
 .header {
+  @include md-block {
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.1);
+  };
 
   &__top {
     background-color: #222222;
@@ -9,6 +12,11 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+
+      @include sm-block {
+        justify-content: center;
+      }
+    ;
     }
   }
 
@@ -16,7 +24,21 @@
     display: none;
     @include md-block {
       display: block;
-    };
+    }
+  ;
+    @include sm-block {
+      display: none;
+    }
+  ;
+
+    &_sm {
+      display: none;
+      @include sm-block {
+        display: block;
+        margin-right: 30px;
+      }
+    ;
+    }
   }
 
   &__menu {
@@ -36,7 +58,12 @@
     margin-right: 34px;
     @include md-block {
       margin-right: 45px;
-    };
+    }
+  ;
+    @include sm-block {
+      margin-right: 20px;
+    }
+  ;
   }
 
   &__middle {
@@ -45,26 +72,65 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include sm-block {
+        position: relative;
+        flex-direction: column;
+        justify-content: initial;
+        align-items: initial;
+        padding: 20px 0;
+      }
+    ;
     }
+  }
+
+  &__contacts {
+    @include sm-block {
+      order: 1;
+      padding-right: 30px;
+      display: flex;
+    }
+  ;
+
   }
 
   &__tel {
     margin-bottom: 10px;
+    @include sm-block {
+      margin-bottom: 5px;
+    }
+  ;
   }
 
   &__time {
     @include md-block {
       display: none;
-    };
+    }
+  ;
     &_md {
       display: none;
       @include md-block {
         display: block;
-      };
+      }
+    ;
     }
   }
 
+  &__logo {
+    @include sm-block {
+      margin-left: -15px;
+      margin-bottom: 30px;
+      padding-right: 30px;
+    }
+  ;
+  }
+
   &__cabinet {
+    @include sm-block {
+      position: absolute;
+      z-index: 10;
+      right: 0;
+    }
+  ;
 
     &-list {
       margin-bottom: 13px;
@@ -75,12 +141,19 @@
   &__email {
     @include md-block {
       display: none;
-    };
+    }
+  ;
+
     &_md {
       display: none;
       @include md-block {
         display: block;
-      };
+      }
+    ;
+      @include sm-block {
+        display: none;
+      }
+    ;
     }
   }
 
@@ -135,13 +208,15 @@
     height: 30px;
     margin-right: 15px;
     padding: 5px;
-  };
+  }
+  @include xs-block {
+    margin-right: 20px;
+  }
 
   &_whatsapp {
     border: none;
     padding: 0;
   }
-
 
   &__svg {
     max-width: 100%;
@@ -171,8 +246,14 @@
 
     @include md-block {
       padding-right: 30px;
-      border-right: 1px solid rgba($bg,.6);
-    };
+      border-right: 1px solid rgba($bg, .6);
+    }
+  ;
+    @include sm-block {
+      padding-right: 0;
+      border-right: none;
+    }
+  ;
 
     &:hover {
       opacity: .7;
@@ -188,14 +269,16 @@
         width: 30px;
         height: 30px;
         margin-right: 0;
-      };
+      }
+    ;
     }
     &-text {
       color: $bg;
       font-weight: 600;
       @include md-block {
         display: none;
-      };
+      }
+    ;
     }
   }
 }
@@ -203,13 +286,24 @@
 .cabinet {
   display: flex;
   align-items: center;
+  @include sm-block {
+    flex-direction: column;
+  }
+;
 
   &__item {
     padding: 0 30px;
     border-right: 1px solid rgba(#53707d, .4);
     @include md-block {
       padding: 0 20px;
-    };
+    }
+  ;
+    @include sm-block {
+      padding: 0;
+      margin-bottom: 20px;
+      border-right: none;
+    }
+  ;
 
     &:hover {
       .cabinet__item-icon {
@@ -238,7 +332,12 @@
   font-weight: 600;
   @include md-block {
     font-size: 18px;
-  };
+  }
+;
+  @include sm-block {
+    font-size: 16px;
+  }
+;
 
   &:hover {
     text-decoration: underline;
@@ -278,26 +377,33 @@
     background-color: #013243;
     transition: .3s;
 
-
     &.open {
       left: 0;
     }
-  };
+
+  }
+;
+  @include sm-block {
+    top: 0;
+  }
+;
 
   &__item {
 
     position: relative;
     @include md-block {
       position: static;
-    };
+    }
+  ;
 
-    &:hover,&.active {
+    &:hover, &.active {
       .nav__drop {
         top: 100%;
         @include md-block {
           top: 0;
           bottom: 0;
-        };
+        }
+      ;
       }
     }
     &.active {
@@ -306,7 +412,8 @@
         @include md-block {
           top: 0;
           bottom: 0;
-        };
+        }
+      ;
       }
       .nav__item-link {
         opacity: .7;
@@ -323,7 +430,8 @@
       @include md-block {
         padding: 12px 0;
         font-size: 12px;
-      };
+      }
+    ;
 
       &:hover {
         opacity: .7;
@@ -342,7 +450,7 @@
     box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.15);
     background-color: $bg;
 
-    @include md-block{
+    @include md-block {
       width: 375px;
       top: -999px;
       bottom: initial;
@@ -358,7 +466,13 @@
         right: 100%;
         top: 0;
       }
-    };
+    }
+  ;
+    @include sm-block {
+      padding: 10px 12px;
+      width: 146px;
+    }
+  ;
   }
 }
 
@@ -367,10 +481,20 @@
   width: 170px;
   @include md-block {
     width: 145px;
-  };
+  }
+;
+  @include sm-block {
+    width: 100%;
+    border-right: none;
+  }
+;
 
   &__item {
     margin-bottom: 25px;
+    @include sm-block {
+      margin-bottom: 5px;
+    }
+  ;
 
     &:last-child {
       margin-bottom: 0;
@@ -396,7 +520,8 @@
       transition: .3s;
       @include md-block {
         font-size: 12px;
-      };
+      }
+    ;
 
     }
   }
@@ -415,7 +540,15 @@
   @include md-block {
     width: 200px;
     padding: 20px 30px;
-  };
+  }
+;
+  @include sm-block {
+    width: 100%;
+    position: static;
+    padding: 0;
+    padding-bottom: 25px;
+  }
+;
 
   &__item {
     display: block;
@@ -426,8 +559,13 @@
     margin-bottom: 25px;
     @include md-block {
       font-size: 12px;
-    };
-
+    }
+  ;
+    @include sm-block {
+      margin-bottom: 10px;
+      color: #333333;
+    }
+  ;
 
     &:last-child {
       margin-bottom: 0;
@@ -452,7 +590,7 @@
         &:nth-child(2) {
           animation-name: open2;
         }
-        &:nth-child(3){
+        &:nth-child(3) {
           animation-name: open3;
         }
       }
@@ -466,7 +604,7 @@
         &:nth-child(2) {
           animation-name: close2;
         }
-        &:nth-child(3){
+        &:nth-child(3) {
           animation-name: close3;
         }
       }
@@ -481,11 +619,14 @@
     left: 0;
     transition: .3s;
 
-
     animation-duration: .3s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+
+    @include sm-block {
+      background-color: #222;
+    };
 
     &:nth-child(1) {
       top: 5px;
@@ -499,6 +640,7 @@
 
   }
 }
+
 @keyframes close1 {
   from {
     transform: rotate(-45deg);
@@ -513,6 +655,7 @@
     transform: rotate(0);
   }
 }
+
 @keyframes close2 {
   from {
     top: 15px;
@@ -527,6 +670,7 @@
     opacity: 1;
   }
 }
+
 @keyframes close3 {
   from {
     top: 15px;
@@ -554,6 +698,7 @@
     transform: rotate(-45deg);
   }
 }
+
 @keyframes open2 {
   from {
     opacity: 1;
@@ -567,6 +712,7 @@
     opacity: 0;
   }
 }
+
 @keyframes open3 {
   from {
 

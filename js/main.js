@@ -40,9 +40,19 @@ $(function () {
        item.addClass('active');
    });
 
-    $(".js-custom-scroll").mCustomScrollbar({
-        scrollButtons: {enable: true}
-    });
+   if (screen.width > 575.99) {
+       $(".js-custom-scroll").mCustomScrollbar({
+           scrollButtons: {enable: true}
+       });
+   } else {
+       $('.js-custom-scroll').showMore({
+           minheight: 212,
+           buttontxtmore: 'Показать больше текста',
+           buttontxtless: 'Скрыть текст',
+           buttoncss: 'abt__more',
+           animationspeed: 250
+       });
+   }
 
     $('.mmenu__button').on('click', function (e) {
         e.preventDefault();
@@ -68,17 +78,14 @@ $(function () {
             delay: 5000,
         },
         breakpoints: {
-            // // when window width is <= 320px
-            // 320: {
-            //     slidesPerView: 1,
-            //     spaceBetween: 10
-            // },
-            // // when window width is <= 480px
-            // 480: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 20
-            // },
-            // when window width is <= 640px
+            575.99: {
+                slidesPerView: 2,
+                spaceBetween: 40
+            },
+            767.99: {
+                slidesPerView: 3,
+                spaceBetween: 80
+            },
             1199.99: {
                 slidesPerView: 4,
                 spaceBetween: 80

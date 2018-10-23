@@ -41,6 +41,9 @@ body {
 
 .main {
   padding: 40px 0 130px;
+  @include sm-block {
+    padding-bottom: 50px;
+  };
 }
 
 .container {

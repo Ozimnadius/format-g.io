@@ -10,6 +10,13 @@
     @include size(14);
     position: relative;
     @include size-lg(12);
+    @include size-sm(24);
+    @include xs-block {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 30px;
+    };
 
 
     &:before {
@@ -27,6 +34,9 @@
         top: -25px;
         left: -25px;
       };
+      @include xs-block {
+        display: none;
+      };
     }
 
     &:after {
@@ -36,6 +46,9 @@
       padding-top: calc( (478/652)*100% );
       @include lg-block {
         padding-top: calc( (361/344)*100% );
+      };
+      @include xs-block {
+        padding-top: calc( (240/322)*100% );
       };
     }
   }
@@ -66,6 +79,9 @@
         width: 102px;
         height: 106px;
       };
+      @include xs-block {
+        display: none;
+      };
     }
   }
 
@@ -77,6 +93,14 @@
     @include col;
     @include size(10);
     @include size-lg(12);
+    @include size-sm(24);
+
+    &_xs {
+      display: none;
+      @include xs-block {
+        display: block;
+      };
+    }
   }
 
   &__title {
@@ -88,6 +112,16 @@
     @include lg-block {
       font-size: 24px;
     };
+    @include xs-block {
+      display: none;
+    };
+
+    &_xs {
+      display: none;
+      @include xs-block {
+        display: block;
+      };
+    }
   }
 
   &__subtitle {
@@ -100,6 +134,18 @@
     @include lg-block {
       font-size: 14px;
     };
+
+    @include xs-block {
+      display: none;
+    };
+
+    &_xs {
+      display: none;
+      @include xs-block {
+        display: block;
+        margin-bottom: 35px;
+      };
+    }
 
     &:after {
       content: '';
@@ -120,6 +166,18 @@
     @include lg-block {
       height: 200px;
     };
+    @include xs-block {
+      height: initial;
+      margin-bottom: 20px;
+    };
+  }
+
+  &__more {
+    text-align: center;
+    color: #6bb9f0;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 40px;
   }
 
   &__link {
@@ -156,6 +214,7 @@
       };
     }
   }
+
 }
 
 .js-custom-scroll .mCSB_scrollTools {
