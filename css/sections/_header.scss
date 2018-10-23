@@ -12,6 +12,20 @@
     }
   }
 
+  &__mmenu {
+    display: none;
+    @include md-block {
+      display: block;
+    };
+  }
+
+  &__menu {
+    @include md-block {
+      display: none;
+    }
+  ;
+  }
+
   &__controls {
     display: flex;
     flex-wrap: wrap;
@@ -20,8 +34,10 @@
 
   &__callorder {
     margin-right: 34px;
+    @include md-block {
+      margin-right: 45px;
+    };
   }
-
 
   &__middle {
     padding: 10px 0;
@@ -36,6 +52,18 @@
     margin-bottom: 10px;
   }
 
+  &__time {
+    @include md-block {
+      display: none;
+    };
+    &_md {
+      display: none;
+      @include md-block {
+        display: block;
+      };
+    }
+  }
+
   &__cabinet {
 
     &-list {
@@ -44,9 +72,24 @@
 
   }
 
+  &__email {
+    @include md-block {
+      display: none;
+    };
+    &_md {
+      display: none;
+      @include md-block {
+        display: block;
+      };
+    }
+  }
 
   &__bottom {
     background-color: #013243;
+
+    &-container {
+      position: relative;
+    }
   }
 
 }
@@ -75,17 +118,24 @@
 .controls {
   display: flex;
 }
+
 .control {
   margin-right: 13px;
   transition: .3s;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid $bg;
+  border: 2px solid #d3d3d3;
   padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include md-block {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    padding: 5px;
+  };
 
   &_whatsapp {
     border: none;
@@ -119,6 +169,11 @@
     align-items: center;
     transition: .3s;
 
+    @include md-block {
+      padding-right: 30px;
+      border-right: 1px solid rgba($bg,.6);
+    };
+
     &:hover {
       opacity: .7;
     }
@@ -128,10 +183,19 @@
       height: 20px;
       fill: $bg;
       margin-right: 13px;
+
+      @include md-block {
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+      };
     }
     &-text {
       color: $bg;
       font-weight: 600;
+      @include md-block {
+        display: none;
+      };
     }
   }
 }
@@ -142,7 +206,10 @@
 
   &__item {
     padding: 0 30px;
-    border-right: 1px solid rgba(#53707d,.4);
+    border-right: 1px solid rgba(#53707d, .4);
+    @include md-block {
+      padding: 0 20px;
+    };
 
     &:hover {
       .cabinet__item-icon {
@@ -169,6 +236,9 @@
   color: #333333;
   font-size: 20px;
   font-weight: 600;
+  @include md-block {
+    font-size: 18px;
+  };
 
   &:hover {
     text-decoration: underline;
@@ -195,15 +265,51 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include md-block {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 12px 12px 12px 30px;
 
+    position: absolute;
+    z-index: 100;
+    top: -106px;
+    left: -999px;
+    background-color: #013243;
+    transition: .3s;
+
+
+    &.open {
+      left: 0;
+    }
+  };
 
   &__item {
 
     position: relative;
+    @include md-block {
+      position: static;
+    };
 
-    &:hover {
+    &:hover,&.active {
       .nav__drop {
         top: 100%;
+        @include md-block {
+          top: 0;
+          bottom: 0;
+        };
+      }
+    }
+    &.active {
+      .nav__drop {
+        top: 100%;
+        @include md-block {
+          top: 0;
+          bottom: 0;
+        };
+      }
+      .nav__item-link {
+        opacity: .7;
       }
     }
 
@@ -214,6 +320,10 @@
       padding: 22px 0;
       position: relative;
       transition: .3s;
+      @include md-block {
+        padding: 12px 0;
+        font-size: 12px;
+      };
 
       &:hover {
         opacity: .7;
@@ -224,20 +334,40 @@
 
   &__drop {
     position: absolute;
-    z-index: 10;
+    z-index: 100;
     top: -999px;
     padding: 28px 40px;
 
     width: 485px;
     box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.15);
     background-color: $bg;
+
+    @include md-block{
+      width: 375px;
+      top: -999px;
+      bottom: initial;
+      left: 100%;
+      padding: 20px 25px;
+
+      &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        right: 100%;
+        top: 0;
+      }
+    };
   }
 }
 
 .nav-1 {
-  border-right: 1px solid rgba(#617e89,.6);
+  border-right: 1px solid rgba(#617e89, .6);
   width: 170px;
-
+  @include md-block {
+    width: 145px;
+  };
 
   &__item {
     margin-bottom: 25px;
@@ -256,7 +386,6 @@
       }
     }
 
-
     &-link {
       display: block;
       color: #666666;
@@ -265,6 +394,9 @@
       padding: 10px 0;
       padding-right: 10px;
       transition: .3s;
+      @include md-block {
+        font-size: 12px;
+      };
 
     }
   }
@@ -280,6 +412,11 @@
   right: 0;
   padding: 28px 40px;
 
+  @include md-block {
+    width: 200px;
+    padding: 20px 30px;
+  };
+
   &__item {
     display: block;
     color: #222222;
@@ -287,9 +424,158 @@
     font-weight: 600;
     padding: 10px 0;
     margin-bottom: 25px;
+    @include md-block {
+      font-size: 12px;
+    };
+
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.mmenu {
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 32px;
+    width: 32px;
+
+    &.open {
+      .mmenu__line {
+        &:nth-child(1) {
+          animation-name: open1;
+        }
+        &:nth-child(2) {
+          animation-name: open2;
+        }
+        &:nth-child(3){
+          animation-name: open3;
+        }
+      }
+    }
+
+    &.close {
+      .mmenu__line {
+        &:nth-child(1) {
+          animation-name: close1;
+        }
+        &:nth-child(2) {
+          animation-name: close2;
+        }
+        &:nth-child(3){
+          animation-name: close3;
+        }
+      }
+    }
+  }
+
+  &__line {
+    width: 32px;
+    height: 2px;
+    background-color: $bg;
+    position: absolute;
+    left: 0;
+    transition: .3s;
+
+
+    animation-duration: .3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &:nth-child(1) {
+      top: 5px;
+    }
+    &:nth-child(2) {
+      top: 15px;
+    }
+    &:nth-child(3) {
+      top: 25px;
+    }
+
+  }
+}
+@keyframes close1 {
+  from {
+    transform: rotate(-45deg);
+    top: 15px;
+  }
+  50% {
+    transform: rotate(0);
+    top: 15px;
+  }
+  to {
+    top: 5px;
+    transform: rotate(0);
+  }
+}
+@keyframes close2 {
+  from {
+    top: 15px;
+    opacity: 0;
+  }
+  50% {
+    top: 15px;
+    opacity: 0;
+  }
+  to {
+    top: 15px;
+    opacity: 1;
+  }
+}
+@keyframes close3 {
+  from {
+    top: 15px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 15px;
+    transform: rotate(0);
+  }
+  to {
+    top: 25px;
+    transform: rotate(0);
+  }
+}
+
+@keyframes open1 {
+  from {
+
+  }
+  50% {
+    top: 15px;
+  }
+  to {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes open2 {
+  from {
+    opacity: 1;
+  }
+  50% {
+    top: 15px;
+    opacity: 0;
+  }
+  to {
+    top: 15px;
+    opacity: 0;
+  }
+}
+@keyframes open3 {
+  from {
+
+  }
+  50% {
+    top: 15px;
+  }
+  to {
+    top: 15px;
+    transform: rotate(45deg);
   }
 }

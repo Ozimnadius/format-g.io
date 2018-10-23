@@ -1,4 +1,5 @@
 .main-cats {
+  margin-bottom: 100px;
 
   .row {
     margin-right: -4px;
@@ -43,11 +44,20 @@
     right: 40px;
     background-color: rgba(#013243,.6);
     padding: 15px 25px 20px 25px;
+    @include md-block {
+      top: initial;
+      bottom: 30px;
+      right: 10px;
+    };
 
     &_br {
       top: initial;
       right: 24px;
       bottom: 20px;
+      @include md-block {
+        bottom: 30px;
+        right: 15px;
+      };
     }
 
     &_bl {
@@ -55,6 +65,11 @@
       right: initial;
       bottom: 20px;
       left: 45px;
+
+      @include md-block {
+        bottom: 30px;
+        left: 78px;
+      };
     }
   }
 
@@ -77,4 +92,43 @@
       text-decoration: underline;
     }
   }
+}
+
+.new-products {
+  margin-bottom: 100px;
+  &__title {
+    display: flex;
+    align-items: center;
+    color: #013243;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 50px;
+    @include md-block {
+      font-size: 24px;
+      margin-bottom: 30px;
+    };
+
+    &:before, &:after {
+      content: '';
+      height: 1px;
+      background-color: #013243;
+      flex-grow: 1;
+    }
+    &:before {
+      margin-right: 30px;
+    }
+    &:after {
+      margin-left: 30px;
+    }
+  }
+}
+.new-product {
+  @include col;
+  @include size(6);
+  @include size-md(12);
+
+  display: flex;
+  justify-content: center;
 }

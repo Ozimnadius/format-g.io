@@ -1,3 +1,186 @@
 .footer {
+  background-color: #222222;
+  padding: 40px 0 60px 0;
 
+  &__top {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(#d3d3d3,.15);
+    margin-bottom: 30px;
+    @include md-block {
+      margin-bottom: 70px;
+      padding-bottom: 0;
+      border-bottom: none;
+    };
+  }
+
+  &__left {
+    @include col;
+    @include size(8);
+    @include size-lg(7);
+    @include size-md(8);
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    margin-left: -15px;
+    margin-top: -15px;
+  }
+
+  &__text {
+    color: #999999;
+    line-height: lh(14px,24px);
+    @include md-block {
+      display: none;
+    };
+
+    &_md {
+      display: none;
+      @include md-block {
+        display: block;
+        margin-bottom: 30px;
+      };
+    }
+  }
+
+  &__center {
+    @include col;
+    @include size(11);
+    @include md-block {
+      display: none;
+    };
+  }
+  &__nav {
+
+    &_md {
+      display: none;
+      @include md-block {
+        display: block;
+      };
+    }
+
+    &-col {
+      @include col;
+      @include size(12);
+    }
+  }
+
+  &__item {
+    display: block;
+    color: $bg;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    transition: .3s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__right {
+    @include col;
+    @include size(5);
+    display: flex;
+    flex-direction: column;
+    @include size-lg(6);
+    @include size-md(16);
+    @include md-block {
+      flex-direction: row;
+      justify-content: space-between;
+    };
+
+    &-top {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__phone {
+    color: $bg;
+    font-size: 21px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+  &__control {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #d3d3d3;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18px;
+    transition: .3s;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &_whatsapp {
+      border: none;
+      padding: 0;
+    }
+
+    &-svg {
+      max-width: 100%;
+      max-height: 100%;
+      fill: $bg;
+    }
+  }
+
+  &__bottom {
+
+    .row {
+      @include md-block {
+        align-items: flex-end;
+      };
+    }
+
+    &-left{
+      @include col;
+      @include size(12);
+    }
+    &-right {
+      @include col;
+      @include size(12);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+  }
+
+  &__copy {
+    color: #999999;
+    font-weight: 600;
+  }
+
+  &__vendor{
+    transition: .3s;
+    @include md-block {
+      display: none;
+    };
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }

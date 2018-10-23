@@ -1,0 +1,11 @@
+.main-brands {
+  padding: 0 100px;
+  margin-bottom: 220px;
+  @include lg-block {
+    padding: 0 20px;
+  };
+
+  &__wrapper {
+    align-items: center;
+  }
+}

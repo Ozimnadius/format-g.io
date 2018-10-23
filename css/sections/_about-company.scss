@@ -1,0 +1,193 @@
+.abt {
+
+
+  .row {
+    align-items: center;
+  }
+
+  &__left {
+    @include col;
+    @include size(14);
+    position: relative;
+    @include size-lg(12);
+
+
+    &:before {
+      content: '';
+      width: 274px;
+      height: 274px;
+      background-color: rgba(#6bb9f0,.42);
+      position: absolute;
+      z-index: 10;
+      top: -75px;
+      left: -80px;
+      @include lg-block {
+        width: 149px;
+        height: 149px;
+        top: -25px;
+        left: -25px;
+      };
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: calc( (478/652)*100% );
+      @include lg-block {
+        padding-top: calc( (361/344)*100% );
+      };
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 20;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 165px;
+      height: 172px;
+      background-color: rgba(#013243,.5);
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      @include lg-block {
+        width: 102px;
+        height: 106px;
+      };
+    }
+  }
+
+  &__pic {
+    max-width: initial;
+  }
+
+  &__right {
+    @include col;
+    @include size(10);
+    @include size-lg(12);
+  }
+
+  &__title {
+    color: #013243;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @include lg-block {
+      font-size: 24px;
+    };
+  }
+
+  &__subtitle {
+    color: #999999;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    position: relative;
+    @include lg-block {
+      font-size: 14px;
+    };
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 65px;
+      height: 3px;
+      background-color: #6bb9f0;
+    }
+  }
+
+  &__content {
+    height: 230px;
+    margin-bottom: 30px;
+    @include lg-block {
+      height: 200px;
+    };
+  }
+
+  &__link {
+    width: 359px;
+    height: 50px;
+    border-radius: 25px;
+    border: 3px solid #013243;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include lg-block {
+      width: 284px;
+      height: 42px;
+      border-radius: 21px;
+    };
+
+    &-title {
+      color: #013243;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 35px;
+      @include lg-block {
+        font-size: 12px;
+        margin-right: 0;
+      };
+    }
+
+    &-svg {
+      width: 30px;
+      height: 30px;
+      fill: #013243;
+      @include lg-block {
+        display: none;
+      };
+    }
+  }
+}
+
+.js-custom-scroll .mCSB_scrollTools {
+  right: 5px;
+}
+
+.js-custom-scroll .mCSB_buttonUp {
+  background: url(../images/icons/scroll-top.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+}
+
+.js-custom-scroll .mCSB_scrollTools .mCSB_draggerRail {
+  background: #C5E2F5;
+}
+
+.js-custom-scroll .mCSB_buttonDown {
+  background: url(../images/icons/scroll-bottom.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+}
+
+.js-custom-scroll .mCSB_scrollTools .mCSB_draggerContainer {
+  left: 5px;
+  margin: 45px 0;
+}
+
+.js-custom-scroll .mCSB_inside>.mCSB_container {
+  margin-right: 117px;
+  @include lg-block {
+    margin-right: 55px;
+  };
+}

@@ -29,12 +29,16 @@ const moduleJS = [
 const vendorJs = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+    'node_modules/swiper/dist/js/swiper.js',
+    'js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js'
 ];
 
 
 const vendorCss = [
     'node_modules/font-awesome/css/font-awesome.css',
     'node_modules/normalize.css/normalize.css',
+    'node_modules/swiper/dist/css/swiper.css',
+    'js/mCustomScrollbar/jquery.mCustomScrollbar.min.css'
 ];
 
 
